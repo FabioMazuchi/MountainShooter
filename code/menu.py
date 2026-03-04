@@ -10,7 +10,7 @@ from code.Const import WIN_WIDTH, COLOR_ORANGE, MENU_OPTION, COLOR_WHITE, COLOR_
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/MenuBg.png')
+        self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
         self.rect = self.surf.get_rect()
 
     def run(self, ):
@@ -19,6 +19,7 @@ class Menu:
         pygame.mixer_music.play(-1)
 
         while True:
+            # Draw Images
             self.window.blit(self.surf, self.rect)
             self.menu_text(50,"Mountain", COLOR_ORANGE, ((WIN_WIDTH / 2), 70))
             self.menu_text(50, "Shooter", COLOR_ORANGE, ((WIN_WIDTH / 2), 120))
@@ -45,7 +46,8 @@ class Menu:
                             menu_option -= 1
                         else:
                             menu_option = len(MENU_OPTION) - 1
-
+                    if event.key == pygame.K_RETURN:
+                        return MENU_OPTION[menu_option]
 
             pygame.display.flip()
 
