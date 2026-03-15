@@ -1,9 +1,9 @@
 from code.Const import WIN_WIDTH
 from code.PlayerShot import PlayerShot
-from code.enemy import Enemy
-from code.enemyShot import EnemyShot
-from code.entity import Entity
-from code.player import Player
+from code.Enemy import Enemy
+from code.EnemyShot import EnemyShot
+from code.Entity import Entity
+from code.Player import Player
 
 
 class EntityMediator:

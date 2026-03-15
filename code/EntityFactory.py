@@ -1,18 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import random
-from unittest import case
 
 from code.Const import WIN_WIDTH, WIN_HEIGHT
-from code.background import Background
-from code.enemy import Enemy
-from code.player import Player
+from code.Background import Background
+from code.Enemy import Enemy
+from code.Player import Player
 
 
 class EntityFactory:
 
     @staticmethod
-    def get_entity(entity_name: str, position=(0, 0)):
+    def get_entity(entity_name: str):
         match entity_name:
             case "Level1Bg":
                 list_bg = []
